@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style>
+    #sectiob-b{
+        height: 100%;
+        margin: 0px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #top-heading{
+        padding: 20px;
+        font-weight: bolder;
+        font-size: 60px;
+        width: 100%;
+        align-self: center;
+        text-decoration: underline;
+    }
+    .table{
+        font-size: 20px;
+        width: 52%;
+        margin: auto;
+    }
+    tbody{
+        font-size: 20px;
+    }
+    tbody tr td{
+        padding: 5px;
+    }
+    .button{
+        font-size: xx-large;
+        display: flex;
+        width: 100%;
+        word-spacing: 30px;
+        justify-content: center;
+    }
+    .button button{
+        padding: 15px;
+        margin: 10px;
+    }
+    .button td button{
+        font-size: medium;
+    }
+    .form-email {
+        margin-top: 100px;
+    }
+
+    form input {
+        padding-bottom: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: large;
+    }
+
+
+</style>
+
+
+<section id="home" class="home" style="height: 550px;">
+
+    <!-- <div>
+            <video autoplay loop muted plays-inline  class="bg_video">
+                <source src="./clips/bg_laptop.mp4" type="video/mp4">
+            </video>
+        </div> -->
+
+    <div class="home-content">
+        <div class="text">
+            <!-- <div class="text-one">CyberHub.org</div> -->
+            <div class="text-two">Welcome to Dashboard</div>
+            <!-- <div class="text-three">Login To Make Blogs Now,</div> -->
+        </div>
+    </div>
+
+</section>
+
+
+<section id="section-a">
+
+    <h1 id="top-heading">" :- Basic Operations -: "</h1>
+    <div class="button">
+    <a href="#section-c"><button style="font-size: medium;">Add Post</button></a>
+    <a href="/logout"><button style="font-size: medium;">Logout</button></a>
+    </div>
+
+</section>
+
+<section id="sectiob-b">
+
+    <h1 id="top-heading">" :- Manage Existing Your Post Here -: "</h1>
+
+    <table class="table">
+        <thead>
+            <tr class="index-row">
+                <th>S-no.</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Slug</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+
+            {% set edit_url = "edit/post/" + post.slug %}
+            {% set delete_url = "delete/" + post.slug %}
+
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ post.title[0:15] }}...</td>
+                <td>{{ post.date }}</td>
+                <td>{{ post.slug }}</td>
+                <div class="button">
+                <td><a href="{{ edit_url }}"><button style="font-size: medium;">Edit</button></a></td>
+                <td><a href="{{ delete_url }}"><button style="font-size: medium;">Delete</button></a></td>
+            </div>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</section>
+
+<section id="section-c">   
+
+<h1 id="top-heading">" :- Add Post -: "</h1>
+
+    <div class="form-email">
+
+        <form action="/post" method="post">
+
+            <h3>Enter The Post Title</h3>
+            <input class="input-box" type="text" name="title" required>
+
+            <h3>Enter The Sub-heading</h3>
+            <input class="input-box" type="text" name="sub_title" required>
+
+            <h3>Enter content here -:</h3>
+            <!-- <input class="input-box" type="text" name="content" id="" required> -->
+            <textarea class="input-box" type="text" name="content" id="" cols="32" rows="12" required></textarea>
+
+            <h3></h3>
+            <input class="input-box" type="submit">
+
+        </form>
+
+    </div>
+</section> 
+
+{% endblock %}

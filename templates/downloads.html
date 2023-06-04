@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<body bgcolor="coral">
+
+    <style>
+        .box1 {
+
+            display: flex;
+            flex-flow: column;
+            margin-top: 130px;
+        }
+
+        .container {
+
+            height: 200px;
+            width: 200px;
+            background-color: hotpink;
+            margin: auto;
+            margin-bottom: 80px;
+            padding: 50px;
+            border: 5px solid black;
+            border-radius: 60px 25px 60px 25px;
+            box-sizing: border-box;
+            cursor: pointer;
+
+        }
+
+        .container p a {
+
+            text-align: center;
+            text-decoration: none;
+            list-style: none;
+            color: black;
+            font-weight: bolder;
+            font-size: x-large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: auto;
+            margin-top: 20%;
+
+
+        }
+    </style>
+
+    <div class="box1">
+
+        <div class="container">
+            <p><a href="{{ url_for('static', filename='text_files/Python Course Information.txt') }}" download> Download
+                    Python </a></p>
+        </div>
+        </a>
+        <div class="container">
+            <p> <a href="{{ url_for('static', filename='text_files/C++ Course Information.txt') }}" download> Download
+                    C++ </a></p>
+        </div>
+        </a>
+
+        <div class="container">
+            <p><a href="{{ url_for('static', filename='text_files/JAVA Course Information.txt') }}" download> Download
+                    JAVA </a></p>
+        </div>
+        </a>
+        <div class="container">
+            <p> <a href="{{ url_for('static', filename='text_files/Kotlin Course Information.txt') }}" download>
+                    Download Kotlin </a> </p>
+        </div>
+
+
+    </div>
+
+</body>
+
+{% endblock%}

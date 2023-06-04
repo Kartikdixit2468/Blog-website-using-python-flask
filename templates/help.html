@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<body>
+
+    <style>
+
+        .form-email{
+            margin-top: 100px;
+        }
+        form input {
+            padding-bottom: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+
+    </style>
+    <section class="form-email">
+
+        <form action="/post" method="post">
+
+            <h3>Enter Your E-mail</h3>
+            <input class="input-box" type="email" name="u_email" required>
+
+            <h3>Enter Your Reciepent E-Mail</h3>
+            <input class="input-box" type="email" name="r_email" required>
+
+            <h3>Enter Your Subject here -:</h3>
+            <input class="input-box" type="text" name="subject" id="">
+
+            <h3>Enter Your message here -:</h3>
+            <input class="input-box" type="text" name="message" id="" required>
+
+            <h3></h3>
+            <input class="input-box" type="submit">
+
+        </form>
+
+    </section>
+
+</body>
+
+{% endblock %}

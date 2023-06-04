@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<body>
+
+    <style>
+
+        .form-email {
+            margin-top: 100px;
+        }
+
+        form input {
+            padding-bottom: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+    </style>
+    <section class="form-email">
+
+        <form action="/edit/post/{{ post.slug }}" method="post" name=>
+
+            <h3>Enter The Post Title</h3>
+            <input class="input-box" type="text" name="title" value="{{ post.title }}" required>
+
+            <h3>Enter The Sub-heading</h3>
+            <input class="input-box" type="text" name="sub_title" value="{{ post.tag_line }}" required>
+
+            <h3>Enter content here -:</h3>
+            <!-- <input class="input-box" type="text" name="content" id="" required> -->
+            <textarea class="input-box" type="text" name="content" id="" cols="32" rows="12" required></textarea>
+
+            <h3></h3>
+            <input class="input-box" type="submit">
+
+        </form>
+
+    </section>
+
+</body>
+
+{% endblock %}

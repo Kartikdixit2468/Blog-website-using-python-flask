@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Hub | India </title>
+
+    <!-- CDN Bootstrap js file linked  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome js -->
+    <script src="https://kit.fontawesome.com/8f91cbbff7.js" crossorigin="anonymous"></script>
+
+    <!-- style sheet linked -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+    <!-- Custom icon for site -: ............  -->
+    <link rel="icon" href="{{ url_for('static', filename='img/logo-icon.svg')}}" sizes="32x32"
+    type="image/svg">
+
+</head>
+
+<body>
+
+
+    <header class="header">
+        <!-- logo -->
+        <img class="logo" alt="CyberHub.org" src="{{ url_for('static', filename='img/logo-icon.svg')}}">
+
+        <nav class="navbar">
+
+            <a href="/" class="{{ active_tabs['home'] }}">Home</a>
+            <a href="/register" class="{{ active_tabs['get_started'] }}">Get Started</a>
+            <a href="/downloads" class="{{ active_tabs['downloads'] }}">Downloads</a>
+            <a href="/post" class="{{ active_tabs['all_post'] }}">All Post</a>
+            <a href="/help" class="{{ active_tabs['help'] }}">Get Help</a>
+
+        </nav>
+        <div class="side-bar">
+
+            <div class="icons" id="options">
+                <a class="fas fa-bars" id="menu-btn"></a>
+                <a class="fas fa-user" id="login-btn" onclick="open_login_area()"></a>
+                <!-- <a class="fa-solid fa-bell" id="notify-btn" onclick="open_notification_area()"></a> -->
+                <a class="fa-solid fa-user" id="notify-btn" ></a>
+            </div>
+
+
+        </div>
+
+        <div class="icons" id="media-icons">
+            <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a> -->
+            <div class=" login-button">
+            <a href="/login"> Login <i class="fa-solid fa-user"></i></a>
+        </div>
+        </div>
+
+        </div>
+
+        <!-- <div class="fas fa-search" id="search-box">Search
+            <form action="backend.php">
+                <input type="search" name="search-box">
+                <input type="button" value="search">
+            </form> 
+        </div> -->
+
+        <!-- <form action="#" class="login-form">
+            <h3>Login Now</h3>
+            <input type="email" placeholder="Your Email">
+            <input type="password" placeholder="Your Password">
+            <p>forgot password, <a href="">Click here</a></p>
+            <p>Dont have account ?, <a href="#">Create now</a></p>
+            <input type="button" value="Login" class="btn">
+            <input type="submit" value="Login" class="btn">
+        </form> -->
+
+    </header>
+
+
+    {% block body %}
+
+
+    {% endblock %}
+
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <footer>
+
+            <div class="box-container">
+
+                <div class="box">
+                    <h3> CyberHub... <i class="fas fa-shopping-basket"></i> </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem, ipsum dolor.</p>
+                    <div class="share">
+                        <a target="_blank" href="#" class="fab fa-facebook-f"> </a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <a href="#" class="links"> <i class="fas fa-phone"></i> +91 8595872053 </a>
+                    <a href="#" class="links"> <i class="fas fa-phone"></i> +91 9897445643 </a>
+                    <a href="#" class="links"> <i class="fas fa-envelope"></i> Kartikdixit2468@gmail.com </a>
+                    <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Vrindavan - UP, India</a>
+                </div>
+
+                <div class="box">
+                    <h3>Quick Links</h3>
+                    <a href="/" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+                    <a href="/register" class="links"> <i class="fas fa-arrow-right"></i> Get-Started </a>
+                    <a href="/downloads" class="links"> <i class="fas fa-arrow-right"></i> Downloads</a>
+                    <a href="/post" class="links"> <i class="fas fa-arrow-right"></i> Post </a>
+                    <a href="/help" class="links"> <i class="fas fa-arrow-right"></i> Help </a>
+                </div>
+
+                <div class="box">
+                    <h3>Supscription</h3>
+                    <p>Subscribe for latest updates</p>
+                    <input type="email" placeholder="Your Email" class="email">
+                    <input type="submit" value="subscribe" class="btn">
+                    <img src="{{ url_for('static', filename='img/payment.png') }}" class="payment-img" alt="">
+                </div>
+
+            </div>
+
+            <div class="credit"> Created by <span> Kartik Dixit </span> | All Rights Reserved </div>
+
+        </footer>
+
+    </section>
+
+    <!-- js file linked  -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

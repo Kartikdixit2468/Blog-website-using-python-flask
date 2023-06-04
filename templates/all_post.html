@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<body>
+
+    <style>
+        /* Write Your content here... */
+        
+        #home{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        #home h1{
+            margin-top: 100px;
+            font-family: 55px;
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+    </style>
+
+    <!-- Write Your content here...  -->
+    <section id="home" >
+        
+            <style>
+
+                #posts{
+                    margin-top: 0px;
+                    padding: 0px;
+                }
+                .post{
+                    margin-top: 10px;
+                    padding: 0px;
+                }
+                #sectiob-b{
+                    background-color: rgb(221, 220, 220);
+                    margin: 30px;
+                    border-radius: 60px 60px;
+                }
+
+            </style>
+
+        <h1>............... All The Post Will Appear Here ...............</h1>
+
+        <section id="sectiob-b">        
+        
+            {% for post in posts %}
+            {% set slug = '/post/' + post.slug %}
+            <div id="posts">
+                <div><a href="{{ slug }}">
+                        <div class="post">
+        
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">" {{ post.title }} "
+                            </h1>
+        
+                            <h2>Posted by {{ post.user }} on -: {{ post.date }}</h2>
+        
+                            <h3>{{ post.content[0:120] }} .... ( Click To View Post)</h3>
+        
+                        </div>
+                    </a></div>
+            </div>
+            {% endfor %}
+        
+        
+        </section>
+
+    </section>
+
+</body>
+
+{% endblock %}

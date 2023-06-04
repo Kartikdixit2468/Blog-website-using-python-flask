@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<body>
+
+    <style>
+
+        body{
+            background-color: #6666;
+
+        }
+        .form-register{
+            margin-top: 100px;
+        }
+        form input {
+            padding-bottom: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+        h1:hover, h2:hover, h3:hover{
+            color: black;
+        }
+
+    </style>
+    <section class="form-register">
+
+        <form action="/register" method="post" class="form-signin w-100 m-auto">
+
+            <h3>Enter Your Name </h3>
+            <input class="input-box" type="text" name="name" class="form-control" required>
+
+            <h3>Enter Your E-mail</h3>
+            <input class="input-box" type="email" name="email" class="form-control" required>
+
+            <h3>Enter Your Mobile number</h3>
+            <input class="input-box" type="number" name="phone_num" required>
+
+            <h3>Enter Your Password -:</h3>
+            <input class="input-box" type="password" name="password" id="" required>
+
+            <input class="input-box" type="submit">
+
+            <h4 style="margin-top: 3px;">Already have account? <a href="/login">Login here</a></h4>
+            
+        </form>
+
+    </section>
+
+</body>
+
+{% endblock %}

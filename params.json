@@ -1,0 +1,11 @@
+{
+    "params": {
+        "gmail_username": "kartikdixt8595@gmail.com",
+        "gmail_password": "DontTellYou5",
+        "production_server": "server_link",
+        "local_server": "127.0.0.1",
+        "no_of_posts": 2,
+        "admin_username": "admin",
+        "admin_password": "Admin@cyberhub.com"
+    }
+}

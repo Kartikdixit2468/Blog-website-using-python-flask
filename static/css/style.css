@@ -1,0 +1,482 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Satisfy&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    box-sizing: border-box;
+    /* variables */
+    --boldtext: rgb(0, 0, 25);
+    --lighttext: rgb(243, 14, 128);
+    --hovercolor: rgb(243, 14, 128);
+    --overlaycolor: rgba(0, 0, 25, 0.555);
+    --defaultcolor: white;
+    --navbar_bg:  rgb(1, 1, 20);
+    --orange: #ff7800;
+    --black: #130f40;
+    --light-color: #666;
+    --border: .2rem solid rgba(0, 0, 0, .1);
+}
+
+html {
+    font-size: 72.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+/* Custom scrollbar with CSS */
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: var(--boldtext);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--lighttext);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lighttext);
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 150vh;
+}
+header{
+    width: 100%;
+    position: fixed;
+    height: 10%;
+    background-color: rgb(0, 0, 25,0.7);
+    display: flex;
+    align-items: flex-start;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-left: 11%;
+    margin-top: 5px;
+    width: 60%;
+    height: 60px;
+    position: fixed;
+    transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+    /* border: 2.5px solid white; */
+}
+nav a {
+    margin: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+
+}
+nav a:hover {
+    color: var(--hovercolor);
+    transition: 0.50s ease;
+    font-size: 20.5px;
+    border-radius: 15px 8px;
+    border: 1px solid var(--hovercolor);
+    text-decoration: none;
+}
+.icons{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    margin: 20px;
+    margin-top: 3px;
+    padding: 10px;
+    /* border: 1px solid white; */
+    position: fixed;
+}
+.icons a{
+    font-size: 25px;
+    margin: auto;
+    margin-top: 5px;
+    cursor: pointer;
+    color: white;
+    padding: 2px;
+    text-decoration: none;
+
+}
+/* .icons a:hover{
+    color: var(--hovercolor);
+    border: 1px solid var(--hovercolor);
+    border-radius: 8px 2px;
+    text-decoration: none;
+} */
+.login-button{
+    margin-top: 0px;
+    padding: 8px;
+    box-sizing: border-box;
+    color: var(--hovercolor);
+}
+.login-button a, i{
+    color: var(--hovercolor);
+}
+.login-button:hover{
+    border: 2px solid var(--hovercolor);
+    border-radius: 40px 40px;
+    color: var(--hovercolor);
+    transition: 0.8s ease;
+}
+nav .active{
+    color: var(--hovercolor);
+    transition: 0.50s ease;
+    font-size: 20.5;
+    border-radius: 15px 8px;
+    border: 1px solid var(--hovercolor);
+}
+.active:hover{
+    transition: 0.50s ease;
+    font-size: 20px;
+}
+#join-btn{
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+#options{
+    margin-left: 75%;
+    width: 7%;
+}
+#media-icons{
+    margin-left: 85%;
+    width: 11%;
+}
+#menu-btn {
+    display: none;
+}
+
+/* Home section styling */
+.home{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(var(--overlaycolor),var(--overlaycolor)), url('../img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .home-content{
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #fff; */
+}
+.text-one{
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+.text-two{
+    font-size: 80px;
+    /* color: var(--boldtext); */
+    color: white;
+    font-weight: 600;
+}
+.text-three{
+    /* color: var(--boldtext); */
+    color: white;
+    font-size: 40px;
+    font-weight: 400px;
+
+}
+.home .button{
+    margin: 14px 0px;
+}
+.button button, td button{
+    font-size: x-large;
+    padding: 8px 16px;
+    background-color: var(--boldtext);
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+.button button:hover, td button:hover{
+    background: none;
+    color: var(--lighttext);
+    border: 2px solid var(--lighttext);
+    transition: all 1.1s ease;
+}
+.form-register form, .form-email{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 22px;
+    box-sizing: border-box;
+    height: 500px;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+/* .form-support{
+    height: 500px;
+    width: 400px;
+    margin: auto;
+} */
+.form-register, .form-email{
+    margin-bottom: 100px;
+}
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#top-heading{
+    font-weight: bold;
+    font-size: 42px;
+    width: 100%;
+    box-sizing: content-box;
+    margin-left: 32%;
+}
+
+#posts{
+    width: 100%;
+    display: flex;
+    position: static;
+    box-sizing: content-box;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+#posts a{
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+.post{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* border: 2px solid black; */
+    border-radius: 30px;
+    /* margin: auto; */
+    margin: 50px auto;
+    /* margin: 100px auto 50px auto; */
+    padding: 35px;
+    box-sizing: border-box;
+}
+.post h1{
+    font-size: 45px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.post h2{
+    font-size: 15pxpx;
+    color: black;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.post h3{
+    font-size: 25pxpx;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 4.5px solid black;
+    border-radius: 30px;
+}
+.post:hover, h1:hover, h2:hover, h3:hover{
+    color: rgb(0, 182, 228);
+    border-color: rgb(0, 182, 228);
+}
+
+.footer {
+    background-color: rgb(0, 0, 25,0.2);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    position: static;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0%;
+    height: max-content;
+}
+.footer .box-container .box{
+    margin: auto;
+    width: 20%;
+    height: max-content;
+}
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--boldtext);
+    padding: 1rem 0;
+}
+.footer .box-container .box h3 i {
+    color: var(--boldtext);
+}
+
+.footer .box-container .box .links {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .links i {
+    color: var(--orange);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i {
+    padding-right: 2rem;
+}
+
+
+.footer .box-container .box p {
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box .share a {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: var(--black);
+    margin-right: .2rem;
+    background: #eee;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+.footer .box-container .box .email {
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.footer .box-container .box .payment-img {
+    margin-top: 2rem;
+    height: 3rem;
+    display: block;
+}
+
+.footer .credit {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    border-top: var(--border);
+}
+
+.footer .credit span {
+    color: var(--lighttext);
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+@media (max-width:1000px){
+
+    #menu-btn {
+        display: inline-block;
+    }
+    
+    .header .navbar {
+        /* border: 2px solid rgb(0, 0, 27);
+        margin: auto;
+        padding: 10px;
+        width: 20%; */
+        border-radius: 50px;
+        transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        background-color: var(--navbar_bg);
+        display: flex;
+        flex-direction: column;
+        font-size: smaller;
+        box-sizing: border-box;
+    }
+    nav{
+        border: 2px solid var(--navbar_bg);
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 50px;
+        background-color: var(--navbar_bg);
+        transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+        box-sizing: border-box;
+        width: fit-content;
+        height: fit-content;
+        margin: 1.5rem;
+    }
+
+    .header .navbar.active {
+        right: 10px;
+        transition: .4s ease;
+    }
+
+    .header .navbar a {
+        font-size: large;
+        margin: 1.5rem 1rem ;
+        display: block;
+    }
+
+    #options{
+        margin-left: 82%;
+    }
+    header {
+        background-color: var(--overlaycolor);
+        height: 5rem;
+    }
+}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<section id="home" class="home">
+
+    <!-- <div>
+            <video autoplay loop muted plays-inline  class="bg_video">
+                <source src="./clips/bg_laptop.mp4" type="video/mp4">
+            </video>
+        </div> -->
+
+    <div class="home-content">
+        <div class="text">
+            <div class="text-one">CyberHub.org</div>
+            <div class="text-two">Start Your Journey</div>
+            <div class="text-three">Login To Make Blogs Now,</div>
+        </div>
+        <div class="button">
+            <form action="/register" method="GET">
+                <button type="submit">Go To Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+<section id="sectiob-b">
+
+    <h1 id="top-heading">*** Our Top recent Post ***</h1>
+
+
+    {% for post in posts %}
+    {% set slug = '/post/' + post.slug %}
+    <div id="posts">
+        <div><a href="{{ slug }}">
+                <div class="post">
+
+                    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">" {{ post.title }} "
+                    </h1>
+
+                    <h2>Posted by {{ post.user }} on -: {{ post.date }}</h2>
+
+                    <h3>{{ post.content[0:150] }}</h3>
+
+                </div>
+            </a></div>
+    </div>
+    {% endfor %}
+
+    <style>
+
+        .button{
+            font-size: xx-large;
+            display: flex;
+            width: 100%;
+            word-spacing: 30px;
+            justify-content: center;
+        }
+        .button button{
+            padding: 15px;
+            margin: 10px;
+        }
+
+    </style>
+
+    <div class="button">
+
+        <a href="{{ prev }}"><button> &larr; Previous Post </button></a>
+        <a href="{{ next }}"><button> Next Post &rarr; </button></a>
+
+    </div>
+
+</section>
+
+{% endblock %}
