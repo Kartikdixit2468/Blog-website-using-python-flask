@@ -1,2 +1,2 @@
 # Blog-website-using-python-flask
-This is a simple todo list app using ReactJs.  One of my ReactJS Projects | This is a dynamic flask website with uses a cyber-hub named sql database.
+This is a blog website with dashboard and login and sign-up system made using python-flask.  One of my python Web-Development Projects | This is a dynamic flask website with uses a cyber-hub named sql database.
